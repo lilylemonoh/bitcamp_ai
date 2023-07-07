@@ -3,7 +3,7 @@ from sklearn.datasets import load_iris
 from sklearn.model_selection import train_test_split, StratifiedKFold, cross_val_score, GridSearchCV
 from sklearn.preprocessing import MinMaxScaler
 from sklearn.ensemble import RandomForestClassifier
-from sklearn.tree import DecisionTreeRegressor
+from catboost import CatBoostClassifier
 import time
 
 #1. 데이터
@@ -63,9 +63,3 @@ end_time = time.time() - start_time
 print('model_score :', model.score(x, y))
 print('걸린 시간 :', end_time)
 
-
-# 최적의 파라미터 : {'max_depth': 10, 'n_estimators': 100, 'n_jobs': 4}
-# 최적의 매개변수 : RandomForestClassifier(max_depth=10, n_jobs=4)
-# best_score : 0.9714285714285713
-# model_score : 0.9333333333333333
-# 걸린 시간 : 12.72077202796936
